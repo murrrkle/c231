@@ -1,0 +1,17 @@
+RootObject: Sun
+
+Object: Sun
+Satellites: Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune,Ceres,Pluto,Haumea,Makemake,Eris
+Radius: 20890260
+Orbital Radius: 0
+
+Object: Earth
+Orbital Radius: 77098290
+Period: 365.256363004
+Radius: 6371000.0
+Satellites: Moon
+
+Object: Moon
+Orbital Radius: 18128500
+Radius: 1737000.10
+Period: 27.321582

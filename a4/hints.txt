@@ -1,0 +1,34 @@
+Structure
+
+Two main parts
+
+getInput() function reads the file
+
+animation() --call--> draw(s, x, y, r)
+
+draw(s, x, y, r) will take the name of a celestial body, s, and draw it in its position x, y with radius r
+
+So many things to handle.. use a dictionary!
+
+Ex.
+
+Object: Uranus
+Orbital Radius: 453573956
+Radius: 2555900
+Period 30799
+Satellites: Puck,Miranda,Ariel,Umbriel,Titania,Oberon
+
+Uranus = {'Orbital Radius': 453573956, 'Radius': 2555900, 'Period': 30799, 'Satellites': ['Puck', 'Miranda', ... etc etc etc]}
+
+Use another dictionary to contain ALL the satellites in the solar system! Each key in the system will contain anoter dictionary containing the dictionary for that satellite!
+
+But how do we read the file to organize it this way??
+
+When the draw() function draws 's', it should s's entire system, including it's satellites. This is the premise for the recursion. Draw a body, draw it's satellites, draw the satellite's satellites, etc.
+
+print('circle', x, y, s['Radius']) But the radius comes from system[s]['Radius']
+        |
+        |
+        v
+for each satellite:
+    draw(satellites, x, y, r)

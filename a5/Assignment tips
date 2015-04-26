@@ -1,0 +1,33 @@
+check_move([x, y], [x, y]):
+
+    [0] goes into move
+    [1] goes into d
+
+    Is board[x][y] is occupied? ie. Is it anything but -1? If so, then it is not a valid move.
+    We are looking for the direction that got passed in, not all eight.
+
+    Game.delta[0] = [0, -1]
+
+    i, j = move[0], move[1]
+
+    This is the difference between the space chosen and the next space in direction d.
+
+    If we do i = i + d[0] and j = j+ d[1], we have moved the space to the next one in direction d. Check the value of the space again.
+    If it is -1, then it is invalid. What if it IS occupied? Check if self.board[i][j] = self.turn. The opponent's will be self.board[i][j] = 1 - self.turn
+
+    Then, this is POTENTIALLY a valid move. If you find your own piece after only one move, it is invalid. If you find an opponent's piece, check in the same direction
+    and see what the next piece is. Keep doing this until you find your own piece again. If you don't, it is invalid. If you do, it is valid.
+
+    ALWAYS INCREMENT BY d
+    
+    REMEMBER TO CHECK IF YOU'RE STILL ON THE BOARD.
+
+    for i in range(8) and j in range(8) will help.
+
+get_move():
+
+    Go through every space. For every direction, ask 'can I take a piece'? Append to a list all the spaces where check_move has returned True.
+
+select_move():
+
+    Pick a move and return it. It is possible to just randomly get one.
